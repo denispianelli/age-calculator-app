@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,700;1,400;1,800&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/reset.css" />
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+
+    <title>Frontend Mentor | Age calculator app</title>
+  </head>
+  <body>
+    <main class="main">
+      <form action="/" method="post" class="form">
+        <div class="form-container">
+          <div class="form__input form__input--invalid-date">
+            <label for="day">Day</label>
+            <input
+              type="number"
+              name="day"
+              placeholder="DD"
+              id="day"
+              value="<%= locals.day %>"
+            />
+          </div>
+          <div class="form__input form__input--invalid-date">
+            <label for="month">Month</label>
+            <input
+              type="number"
+              name="month"
+              placeholder="MM"
+              id="month"
+              value="<%= locals.month %>"
+            />
+          </div>
+          <div class="form__input form__input--invalid-date">
+            <label for="year">Year</label>
+            <input
+              type="number"
+              name="year"
+              placeholder="YYYY"
+              id="year"
+              value="<%= locals.year %>"
+            />
+          </div>
+          <button type="submit">
+            <img src="./images/icon-arrow.svg" alt="" />
+          </button>
+        </div>
+        <div class="age-calculator">
+          <p class="age-calculator__years"><span>--</span> years</p>
+          <p class="age-calculator__months"><span>--</span> months</p>
+          <p class="age-calculator__days"><span>--</span> days</p>
+        </div>
+      </form>
+    </main>
+    <script src="/js/index.js"></script>
+  </body>
+</html>

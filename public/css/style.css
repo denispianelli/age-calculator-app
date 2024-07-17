@@ -1,0 +1,146 @@
+/* ! --- COLORS --- */
+:root {
+  /* *Primary */
+  --purple: hsl(259, 100%, 65%);
+  --light-red: hsl(0, 100%, 67%);
+
+  /* *Neutral */
+  --white: hsl(0, 0%, 100%);
+  --off-white: hsl(0, 0%, 94%);
+  --light-grey: hsl(0, 0%, 86%);
+  --smokey-grey: hsl(0, 1%, 44%);
+  --off-black: hsl(0, 0%, 8%);
+}
+
+/* ! --- GENERAL --- */
+* {
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  background-color: var(--light-grey);
+}
+
+/* ! --- MAIN --- */
+.main {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.form {
+  width: 900px;
+  height: 600px;
+  background-color: var(--white);
+  padding: 3em 5em 3em 3em;
+  border-radius: 1em 1em 12em 1em;
+}
+.form-container {
+  position: relative;
+  display: flex;
+  gap: 2em;
+  padding-bottom: 2em;
+  border-bottom: 1px solid var(--light-grey);
+}
+.form__input {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+.form__input--err label,
+.form__input--invalid-day label,
+.form__input--invalid-month label,
+.form__input--invalid-year label,
+.form__input--invalid-date label {
+  color: var(--light-red) !important;
+}
+.form__input--err input,
+.form__input--err input:focus,
+.form__input--err input:hover,
+.form__input--invalid-day input,
+.form__input--invalid-month input,
+.form__input--invalid-year input,
+.form__input--invalid-date input {
+  border: 1px solid var(--light-red) !important;
+}
+.form__input--err::after,
+.form__input--invalid-day::after,
+.form__input--invalid-month::after,
+.form__input--invalid-year::after,
+.form__input--invalid-date::after {
+  font-size: 400;
+  font-style: italic;
+  color: var(--light-red);
+  padding-top: 0.8em;
+}
+.form__input--err::after {
+  content: 'This field is required';
+}
+.form__input--invalid-day::after {
+  content: 'Must be a valid day';
+}
+.form__input--invalid-month::after {
+  content: 'Must be a valid month';
+}
+.form__input--invalid-year::after {
+  content: 'Must be in the past';
+}
+.form-container .form__input.form__input--invalid-date:first-child:after {
+  content: 'Must be a valid date';
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type='number'] {
+  appearance: none;
+  -moz-appearance: textfield;
+}
+.form input {
+  font-size: 2em;
+  font-weight: 700;
+  padding: 0.5em 0.6em;
+  width: 180px;
+  border-radius: 0.3em;
+  border: 1px solid var(--light-grey);
+}
+.form input:focus,
+.form input:hover {
+  cursor: pointer;
+  outline: none;
+  border: 1px solid var(--purple);
+}
+.form label {
+  text-transform: uppercase;
+  color: var(--smokey-grey);
+  font-size: 0.8em;
+  letter-spacing: 0.3em;
+  padding-bottom: 1em;
+}
+button {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  transform: translate(50%, 50%);
+  border-radius: 50%;
+  border: none;
+  width: 90px;
+  height: 90px;
+  background-color: var(--purple);
+}
+button:hover {
+  background-color: var(--off-black);
+  cursor: pointer;
+}
+.age-calculator {
+  padding-top: 3rem;
+  font-weight: 800;
+  font-style: italic;
+  font-size: 6rem;
+}
+.age-calculator span {
+  color: var(--purple);
+}
